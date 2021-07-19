@@ -1,5 +1,5 @@
 <?php
-    require_once('../../plugins/Connections/CONNECT_SQL.php');
+    require_once('../Plugins/Connections/CONNECT_SQL.php');
 
     $name = $_POST['name'];
     $email = $_POST['email'];

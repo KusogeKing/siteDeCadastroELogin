@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-        <link rel="stylesheet" href="../Plugins/bootstrap-5.0.2-dist/css/bootstrap.css"/>
-        <script src="../Plugins/bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+        <link rel="stylesheet" href="Plugins/bootstrap-5.0.2-dist/css/bootstrap.css"/>
+        <script src="Plugins/bootstrap-5.0.2-dist/js/bootstrap.js"></script>
 </head>
 <style>
     .container{
