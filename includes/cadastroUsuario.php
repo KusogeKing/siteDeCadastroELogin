@@ -2,53 +2,18 @@
 
 <head>
     <link rel="stylesheet" href="../Plugins/bootstrap-5.0.2-dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="../styles/styleCadastro.css"/>
     <script src="../Plugins/bootstrap-5.0.2-dist/js/bootstrap.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>MEU DEUS</title>
 </head>
-<style>
-    h1{
-        text-align: center;
-    }
-    .container{
-        flex: 1;
-        margin-top:10%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        border-radius:9px;
-        row-gap: 1ch;
-
-        border-style: solid;
-        border-color: #A7BBC7;
-        box-shadow: 0 0 1em #515E63;
-
-        background: #A7BBC7;
-
-        padding-bottom:1%;
-    }
-
-
-    .form{
-        margin-left: -30%;
-        margin-right: -30%;
-    }
-
-    body{
-        background-color: #E1E5EA;
-    }
-    .hidden{
-        display: none;
-    }
-</style>
 <body>
     <form id="form">
         <div class="container">
-
         <h1>Cadastro</h1>
+        
         <div class="correto hidden" >CADASTRO REALIZADO COM SUCESSO</div>
-        <div class="errado hidden" >CADASTRO CONTÉM ERRO, VERIFICAR SE TODAS INFORMAÇÕES FORAM PREENCHIDAS</div>
-        <div class="erradoPassword hidden" >AS SENHAS DIGITADAS NÃO COINCIDEM, REENSIRA-AS</div>
+
         <div class="form">
             <div class="row justify-content-center">
                 <div class="col-3">
@@ -97,6 +62,7 @@
 
 
 <script type="text/javascript">
+    // Função que realiza a confirmação se tudo foi digitado corretamente e se as senha coincidem, para então a funçao de salvamento ser executada
     function confirmaCadastro(){
         nome = $('#nameInput').val();
         login = $('#loginInput').val();
@@ -114,6 +80,7 @@
             saveCadastro();
         }
     }
+    // Função que puxa e envia os dados do cadastro para realizar a inserção no banco de dados
     function saveCadastro(){
         $.ajax({
             url: "../services/saveCadastro.php",
@@ -121,7 +88,7 @@
             dataType: "text",
             data: $('#form').serialize(),
             success: function(response){
-                $('.certo').show();
+                $('.correto').show();
             }
         })
     }
