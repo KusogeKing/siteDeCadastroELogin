@@ -10,9 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="Plugins/bootstrap-5.0.2-dist/css/bootstrap.css" />
-    <script src="Plugins/bootstrap-5.0.2-dist/js/bootstrap.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <?php 
+    include_once('includes/declarations.php');
+    ?>
 </head>
 <style>
     .container {
@@ -40,7 +40,7 @@
     <div class="container" id="buttons">
         <div class="row">
             <div class="col-sm">
-                <a type="button" target=”_blank” href="includes/cadastroUsuario.php" class="btn btn-primary">Cadastro</a>
+                <a type="button" target=”_blank” href="cadastroUsuario.php" class="btn btn-primary">Cadastro</a>
             </div>
         </div>
         <div class="row">
