@@ -8,36 +8,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styleIndex.css"/>
+
     <title>Document</title>
 
     <?php 
     include_once('includes/declarations.php');
     ?>
 </head>
-<style>
-    .container {
-        flex: 1;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-radius: 9px;
-        row-gap: 1ch;
-
-        /* background: #6610f2; */
-    }
-
-    .modal-header {
-        background-color: #A7BBC7;
-    }
-
-    .hidden {
-        display: none;
-    }
-</style>
 
 <body>
-    <div class="container" id="buttons">
+    <div id="fullContainer">
         <div class="row">
             <div class="col-sm">
                 <a type="button" target=”_blank” href="cadastroUsuario.php" class="btn btn-primary">Cadastro</a>
