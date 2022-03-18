@@ -1,22 +1,28 @@
 <?php
     require_once('../Plugins/Connections/CONNECT_SQL.php');
 
+    if ( mysqli_connect_errno() ) {
+      //Se houver algum erro o script para e mostra o erro
+      exit('Failed to connect to MySQL: ' . mysqli_connect_error());
+    }
+
+    $stmt = mysqli_prepare($conn, "INSERT INTO usuarios_cadastrados(nome, login, email, senha) VALUES (?, ?, ?, ?)");
+    mysqli_stmt_bind_param($stmt, 'ssss', $name, $login, $email, $passwordHash);
+
     $name = $_POST['name'];
     $email = $_POST['email'];
     $login = $_POST['login'];
     $password = $_POST['password'];
 
-    if ( mysqli_connect_errno() ) {
-      // If there is an error with the connection, stop the script and display the error.
-      exit('Failed to connect to MySQL: ' . mysqli_connect_error());
-  }
-
     // Criptografando a senha antes da msm ser inserida no banco de dados
     $passwordHash = password_hash($password, PASSWORD_BCRYPT);
 
-    // Query que realiza a inserção de dados na tabela
-    $query = "INSERT INTO usuarios_cadastrados(nome, login, email, senha) VALUES ('$name', '$login', '$email', '$passwordHash')";
-    $result = mysqli_query($conn, $query);
-    
+    mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_close($stmt);
+
+    mysqli_close($conn);
+
+    header("Refresh:1;");
 
 ?>
