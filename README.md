@@ -5,7 +5,7 @@
 
 ## 💻 Funcionalidade
 
-É uma simples página de cadastro e login feita com o intuito de ser fonte de estudos em PHP.
+É uma simples página de cadastro e login feita com o intuito de ser fonte de estudos em PHP legado.
 
 
 ## 📋 Ajustes e melhorias
